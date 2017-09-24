@@ -1,0 +1,9 @@
+// Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. 
+// Your result cannot contain duplicates.
+
+
+select DISTINCT (city) from STATION where REGEXP_LIKE(city,'*[aeiou]$'.'i');
+
+// $ means matches the end of a string * means matches zero or more occurrences.
+// [aeiou] = (a|e|i|o|u)
+// 'i' for unsensitive matching
