@@ -1,0 +1,11 @@
+// Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) 
+// as both their first and last characters. Your result cannot contain duplicates.
+
+select Distinct(city) from STATION
+where REGEXP_LIKE(city,'^[a|e|i|u|o].*[a|e|i|u|o]$','i');
+
+or
+
+Combining the answer of 6 and 7 you will know 8:
+where REGEXP_LIKE(city, '^[aeiou]','i') 
+and REGEXP_LIKE(city, '[aeiou]$','i');
