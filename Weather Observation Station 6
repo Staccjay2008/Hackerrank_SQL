@@ -1,0 +1,8 @@
+// Weather Observation Station 6
+// Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. 
+// Your result cannot contain duplicates.
+
+select Distinct(city) from Station where REGEXP_LIKE (city, '^(a|e|i|o|u)', 'i');
+
+// i for unsensitive case ^ for matching the begining of the string
+// [aeiou] and (a|e|i|o|u) are same
