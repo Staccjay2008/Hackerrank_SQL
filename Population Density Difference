@@ -1,5 +1,13 @@
 // Query the difference between the maximum and minimum populations in CITY.
 
-select maxP-minP from
+select distinct(maxP-minP) from
 (select population maxP from City where population >= all (select population from City)), 
 (select population minP from City where population <= all (select population from City));
+ (7ms)
+
+or 
+select max(population) - min(population) from CITY;
+(4ms)
+
+
+
